@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Demo</string>
+
+    <string name="status_load_failed">网络异常，加载失败</string>
+    <string name="can_not_load_more">没有更多内容了</string>
+    <string name="load_failed_text">加载失败</string>
+    <string name="secret_only_me">仅自己可见</string>
+
+    <string name="follow">关注</string>
+    <string name="followed">已关注</string>
+    <string name="opus_item_touch_tips_text">双指放大可查看大图</string>
+</resources>

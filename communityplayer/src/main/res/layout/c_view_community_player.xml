@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--社区player_view-->
+<RelativeLayout
+    android:id="@+id/base_video_relative_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="#DAD468">
+
+    <!--*************************************公共部分*****************************************-->
+    <!--第一帧-->
+    <ImageView
+        android:id="@+id/first_frame_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
+
+    <!--音量、亮度、视频进度调节-->
+    <RelativeLayout
+        android:id="@+id/adjust_relative_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#26000000"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/adjust_progress_bar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="125dp"
+            android:layout_height="4dp"
+            android:layout_centerVertical="true"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:progressDrawable="@drawable/c_preview_bar_bgk"
+            android:thumbOffset="0dp"/>
+
+    </RelativeLayout>
+    <!--*************************************公共部分*****************************************-->
+
+    <!--*************************************满屏部分*****************************************-->
+    <!--预览进度条-->
+    <ProgressBar
+        android:id="@+id/pre_progress_bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentBottom="true"
+        android:maxHeight="3dp"
+        android:minHeight="3dp"
+        android:progressDrawable="@drawable/c_preview_bar_bgk"
+        android:thumbOffset="0dp"
+        android:visibility="gone"/>
+    <!--加载icon-->
+    <ImageView
+        android:id="@+id/full_loading_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/c_discovery_video_loading_icon"
+        android:visibility="gone"/>
+
+    <!--浮动隐藏部分-->
+    <RelativeLayout
+        android:id="@+id/widget_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#26000000"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/back_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/c_video_back_selector"/>
+
+        <ImageView
+            android:id="@+id/full_play_state_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/c_video_pause_selector"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/c_progress_bgk"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/current_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                tools:text="0:00"/>
+
+            <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:maxHeight="3dp"
+                android:minHeight="3dp"
+                android:progressDrawable="@drawable/c_seek_bar_bgk"
+                android:thumb="@drawable/c_seekbar_icon"
+                android:thumbOffset="0dp"/>
+
+            <TextView
+                android:id="@+id/total_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                tools:text="24:00"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <!--*************************************满屏部分*****************************************-->
+
+
+    <!--遮罩层-->
+    <FrameLayout
+        android:id="@+id/cover_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!--*************************************小屏部分*****************************************-->
+    <!--声音-->
+    <LinearLayout
+        android:id="@+id/voice_linear_layout"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_toLeftOf="@+id/enter_full_image_view"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/voice_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/c_voice_on_icon"/>
+
+        <TextView
+            android:id="@+id/position_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="1dp"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="gone"
+            tools:text="20:00"/>
+
+    </LinearLayout>
+
+    <!--加载icon-->
+    <ImageView
+        android:id="@+id/normal_loading_image_view"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_toLeftOf="@+id/enter_full_image_view"
+        android:src="@drawable/c_discovery_video_loading_icon"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/enter_full_image_view"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/c_ic_enter_full_screen"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <!--播放状态按钮-->
+    <ImageView
+        android:id="@+id/normal_play_state_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/c_opus_video_icon"
+        android:visibility="gone"/>
+    <!--*************************************小屏部分*****************************************-->
+
+
+</RelativeLayout>

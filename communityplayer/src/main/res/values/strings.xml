@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">communityplayer</string>
+    <string name="wifi_dialog_tips">当前未非wifi环境播放视频，已为您暂停播放</string>
+    <string name="dialog_cancel">暂停观看</string>
+    <string name="dialog_confirm">继续观看</string>
+    <string name="play_video_through_4g">当前正使用手机流量播放视频</string>
+</resources>

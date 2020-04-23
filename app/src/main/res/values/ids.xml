@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <item name="loadmore_recyclerview_footer" type="id"/>
+    <item name="wrapheightviewpager" type="id"/>
+</resources>
