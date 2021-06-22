@@ -1,100 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.haibin.calendarview.CalendarLayout
+        android:id="@+id/calendarViewlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:orientation="vertical"
+        app:calendar_show_mode="both_month_week_view"
+        app:default_status="expand">
 
-    <LinearLayout
+        <com.haibin.calendarview.CalendarView
+            android:id="@+id/calendarView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            app:calendar_height="60dp"
+            app:current_month_text_color="@color/color_80404856"
+            app:day_text_size="14sp"
+            app:min_year="2016"
+            app:month_view="com.jz.testapplication.CMonthView"
+            app:month_view_scrollable="true"
+            app:month_view_show_mode="mode_all"
+            app:other_month_text_color="@color/color_404856"
+            app:scheme_month_text_color="@android:color/white"
+            app:week_background="@android:color/transparent"
+            app:week_line_margin="15dp"
+            app:week_start_with="mon"
+            app:week_text_color="#B2B6B6"
+            app:week_text_size="14sp"
+            app:week_view=" com.jz.testapplication.CWeekView" />
+    </com.haibin.calendarview.CalendarLayout>
 
-        <TextView
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:text="view层级"
-                android:onClick="onClick_01"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:text="bottomSheet"
-                android:onClick="onClick_02"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:text="video"
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:onClick="onClick_03"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:text="lottie"
-                android:onClick="onClick_04"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:text="material design"
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:onClick="onClick_05"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:text="taskAffinity"
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:onClick="onClick_06"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:text="fragment"
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:onClick="onClick_07"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:text="recyclerview"
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:onClick="onClick_08"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:text="vibrate"
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:onClick="onClick_09"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:text="eventbus"
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:onClick="onClick_10"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:layout_height="50dp" />
-
-        <TextView
-                android:layout_width="match_parent"
-                style="@style/textStyle"
-                android:layout_height="50dp" />
-
-
-    </LinearLayout>
-
-</ScrollView>
+</LinearLayout>

@@ -1,5 +1,2 @@
 include ':app'
-rootProject.name='Demo'
-
-include ':communityplayer'
-project (':communityplayer').projectDir = new File('/communityplayer/')
+rootProject.name = "TestApplication"
